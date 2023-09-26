@@ -47,6 +47,11 @@ docker ps
 #  | |__| | |\  |____) |___) |
 #   \_____|_| \_|_____/|____/ 
                             
-add-apt-repository ppa:gns3/ppa
-apt update -y
-apt install gns3-gui gns3-server
+apt install -y python3-pip python3-pyqt5 python3-pyqt5.qtsvg \
+python3-pyqt5.qtwebsockets \
+qemu qemu-kvm qemu-utils libvirt-clients libvirt-daemon-system virtinst \
+wireshark xtightvncviewer apt-transport-https \
+ca-certificates curl gnupg2 software-properties-common -y
+
+pip3 install gns3-server
+pip3 install gns3-gui
