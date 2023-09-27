@@ -19,6 +19,6 @@ RUN \
 # 	-e 's/bgpd=no/bgpd=yes/g' \
 # 	/etc/frr/daemons
 
-RUN  /usr/lib/frr/frrinit.sh start
+# RUN  /usr/lib/frr/frrinit.sh start
 
-CMD ["sh"]
+# CMD ["sh"]
