@@ -1,5 +1,0 @@
-version: '3'
-services:
-  host_jng-1:
-    build:
-      context: host
