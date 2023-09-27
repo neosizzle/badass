@@ -19,6 +19,5 @@ RUN \
 # 	-e 's/bgpd=no/bgpd=yes/g' \
 # 	/etc/frr/daemons
 
-# RUN  /usr/lib/frr/frrinit.sh start
-
+# CMD ["/usr/lib/frr/docker-start", "start"]
 # CMD ["sh"]
