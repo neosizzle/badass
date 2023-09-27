@@ -1,3 +1,3 @@
 FROM busybox:latest
 
-ENTRYPOINT ["bash"]
+ENTRYPOINT ["sh"]
