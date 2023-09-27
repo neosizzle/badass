@@ -2,8 +2,8 @@ FROM frrouting/frr:latest
 
 # create configs
 # RUN mkdir /etc/frr
-RUN touch /etc/frr/frr.conf
-RUN touch /etc/frr/bgpd.conf
+RUN touch /etc/frr/frr.conf /etc/frr/bgpd.conf /etc/frr/vtysh.conf
+# RUN touch /etc/frr/bgpd.conf
 
 # enable daemons
 # RUN \
