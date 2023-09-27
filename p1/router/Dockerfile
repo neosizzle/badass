@@ -19,3 +19,5 @@ RUN \
     -e 's/ospfd=no/ospfd=yes/g' \
     -e 's/isisd=no/isisd=yes/g' \
   /etc/frr/daemons
+
+  CMD ["tail"]
