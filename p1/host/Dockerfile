@@ -1,3 +1,3 @@
-FROM debian:latest
+FROM busybox:latest
 
-ENTRYPOINT ["tail", "-f"]
+ENTRYPOINT ["bash"]

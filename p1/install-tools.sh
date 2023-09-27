@@ -40,6 +40,13 @@ apt-get install docker-ce docker-ce-cli containerd.io -y
 #Verify that Docker Engine is installed correctly
 docker ps
 
+# Install Docker Compose
+curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+
+# Verify the installation
+docker-compose --version
+
 #    _____ _   _  _____ ____  
 #   / ____| \ | |/ ____|___ \ 
 #  | |  __|  \| | (___   __) |
@@ -51,7 +58,15 @@ apt install -y python3-pip python3-pyqt5 python3-pyqt5.qtsvg \
 python3-pyqt5.qtwebsockets \
 qemu qemu-kvm qemu-utils libvirt-clients libvirt-daemon-system virtinst \
 wireshark xtightvncviewer apt-transport-https \
-ca-certificates curl gnupg2 software-properties-common -y
+ca-certificates curl gnupg2 software-properties-common cmake  libelf-dev libpcap0.8-dev -y
+
+bash -c 'echo "deb http://ppa.launchpad.net/gns3/ppa/ubuntu bionic main" >> /etc/apt/sources.list'
+bash -c 'echo "deb-src http://ppa.launchpad.net/gns3/ppa/ubuntu bionic main" >> /etc/apt/sources.list'
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F88F6D313016330404F710FC9A2FD067A2E3EF7B
+apt-get update
+apt install dynamips ubridge
+/sbin/usermod -aG ubridge,libvirt,kvm,wireshark,docker $(whoami)
+
 
 pip3 install gns3-server
 pip3 install gns3-gui
