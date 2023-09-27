@@ -1,3 +1,4 @@
 FROM busybox:latest
 
-CMD ["sh"]
+# CMD ["sh"]
+CMD ["tail"]

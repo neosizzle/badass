@@ -1,5 +1,5 @@
 # start the host docker container
-# docker run -d --name host_jng-1 debian tail -f
+# docker run -it --name host_jng-1 host
 # docker build -t host:latest host
 
 # start the router docker container
