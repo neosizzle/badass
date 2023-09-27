@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM frrouting/frr:latest
 
 
-ENTRYPOINT ["tail"]
+# ENTRYPOINT ["tail"]
