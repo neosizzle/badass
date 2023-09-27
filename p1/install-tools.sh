@@ -57,7 +57,7 @@ docker-compose --version
 apt install -y python3-pip python3-pyqt5 python3-pyqt5.qtsvg \
 python3-pyqt5.qtwebsockets \
 qemu qemu-kvm qemu-utils libvirt-clients libvirt-daemon-system virtinst \
-wireshark xtightvncviewer apt-transport-https \
+wireshark xtightvncviewer apt-transport-https tshark \
 ca-certificates curl gnupg2 software-properties-common cmake  libelf-dev libpcap0.8-dev -y
 
 bash -c 'echo "deb http://ppa.launchpad.net/gns3/ppa/ubuntu bionic main" >> /etc/apt/sources.list'
