@@ -4,6 +4,7 @@ FROM frrouting/frr:latest
 # RUN mkdir /etc/frr
 RUN touch /etc/frr/frr.conf /etc/frr/bgpd.conf /etc/frr/vtysh.conf
 # RUN touch /etc/frr/bgpd.conf
+RUN chmod 777 /etc/frr/frr.conf /etc/frr/bgpd.conf /etc/frr/vtysh.conf
 
 # enable daemons
 # RUN \
