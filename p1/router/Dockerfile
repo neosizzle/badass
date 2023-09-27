@@ -7,16 +7,18 @@ FROM frrouting/frr:latest
 # RUN chmod 777 /etc/frr/frr.conf /etc/frr/bgpd.conf /etc/frr/vtysh.conf
 
 # enable daemons
-# RUN \
-# 	sed -i \
-# 	-e 's/bgpd=no/bgpd=yes/g' \
-# 	-e 's/ospfd=no/ospfd=yes/g' \
-# 	-e 's/isisd=no/isisd=yes/g' \
-# 	/etc/frr/daemons
-
 RUN \
 	sed -i \
 	-e 's/bgpd=no/bgpd=yes/g' \
+	-e 's/ospfd=no/ospfd=yes/g' \
+	-e 's/isisd=no/isisd=yes/g' \
 	/etc/frr/daemons
 
-# CMD ["tail"]
+# RUN \
+# 	sed -i \
+# 	-e 's/bgpd=no/bgpd=yes/g' \
+# 	/etc/frr/daemons
+
+# RUN  /usr/lib/frr/frrinit.sh start
+
+CMD ["sh"]
