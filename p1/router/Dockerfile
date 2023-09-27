@@ -1,7 +1,7 @@
 FROM frrouting/frr:latest
 
 # create configs
-RUN mkdir /etc/frr
+# RUN mkdir /etc/frr
 RUN touch /etc/frr/bgpd.conf
 
 # enable daemons
