@@ -1,3 +1,4 @@
-FROM debian:latest
+FROM alpine:latest
 
-ENTRYPOINT ["tail", "-f"]
+
+ENTRYPOINT ["tail"]
