@@ -1,0 +1,22 @@
+# need local?
+auto eth0
+iface eth0 inet static
+    address 10.1.1.1
+    netmask 255.255.255.0
+    post-up ip link add vxlan10 type vxlan id 10 dev eth0 remote 10.1.1.2 dstport 0
+    post-up ip link set dev vxlan10 up
+    post-up ip link add br0 type bridge
+    post-up ip link set vxlan10 master br0
+    post-up ip link set eth1 master br0
+    post-up ip link set dev br0 up
+    post-down ip link del vxlan10
+    post-down ip link del br0
+
+# auto eth1
+# iface eth1 inet static
+#     address 30.1.1.3
+#     netmask 255.255.255.0
+
+# auto br0
+# iface br0 inet static
+#     bridge_ports vxlan10 eth1
