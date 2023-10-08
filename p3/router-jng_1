@@ -3,13 +3,13 @@ conf t
 
 ! Set up local interfaces
 interface eth0
- ip address 10.1.1.1/30 !10.1.1.1 - 10.1.1.2
+ ip address 10.1.1.1/30
 exit
 interface eth1
- ip address 10.1.1.5/30 !10.1.1.5 - 10.1.1.6
+ ip address 10.1.1.5/30
 exit
 interface eth2
- ip address 10.1.1.9/30 !10.1.1.9 - 10.1.1.10
+ ip address 10.1.1.9/30
 exit
 interface lo
  ip address 1.1.1.1/32
