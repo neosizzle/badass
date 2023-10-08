@@ -1,18 +1,21 @@
 vtysh << EOF
-configure terminal
-no ipv6 forwarding
+conf t
+
+! Set up local interfaces
 interface eth0
- ip address 10.1.1.1/30
+ ip address 10.1.1.1/30 !10.1.1.1 - 10.1.1.2
 exit
 interface eth1
- ip address 10.1.1.5/30
+ ip address 10.1.1.5/30 !10.1.1.5 - 10.1.1.6
 exit
 interface eth2
- ip address 10.1.1.9/30
+ ip address 10.1.1.9/30 !10.1.1.9 - 10.1.1.10
 exit
 interface lo
  ip address 1.1.1.1/32
 exit
+
+! Configure BGP and EVPN
 router bgp 1
  neighbor DYNAMIC peer-group
  neighbor DYNAMIC remote-as 1
@@ -23,6 +26,8 @@ router bgp 1
   neighbor DYNAMIC route-reflector-client
  exit-address-family
 exit
+
+! Configure and enable OSPF
 router ospf
  network 0.0.0.0/0 area 0
 exit
